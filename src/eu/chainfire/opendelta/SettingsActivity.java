@@ -54,7 +54,9 @@ public class SettingsActivity extends PreferenceActivity implements
     public static final String PREF_CHARGE_ONLY = "charge_only";
     public static final String PREF_BATTERY_LEVEL = "battery_level_string";
     private static final String KEY_SECURE_MODE = "secure_mode";
+    private static final String KEY_AB_PERF_MODE = "ab_perf_mode";
     private static final String KEY_CATEGORY_DOWNLOAD = "category_download";
+    private static final String KEY_CATEGORY_FLASHING = "category_flashing";
     public static final String PREF_SCREEN_STATE_OFF = "screen_state_off";
     private static final String PREF_CLEAN_FILES = "clear_files";
     public static final String PREF_START_HINT_SHOWN = "start_hint_shown";
@@ -127,6 +129,8 @@ public class SettingsActivity extends PreferenceActivity implements
         mABPerfMode.setOnPreferenceChangeListener(this);
         mFileFlash = (SwitchPreference) findPreference(PREF_FILE_FLASH);
         mAutoDownloadCategory = (PreferenceCategory) findPreference(KEY_CATEGORY_DOWNLOAD);
+        PreferenceCategory flashingCategory =
+                (PreferenceCategory) findPreference(KEY_CATEGORY_FLASHING);
 
         if (!Config.isABDevice()) {
             flashingCategory.removePreference(mABPerfMode);
@@ -249,6 +253,9 @@ public class SettingsActivity extends PreferenceActivity implements
         } else if (preference == mScheduleWeekDay) {
             int idx = mScheduleWeekDay.findIndexOfValue((String) newValue);
             mScheduleWeekDay.setSummary(mScheduleWeekDay.getEntries()[idx]);
+            return true;
+        } else if (preference.equals(mABPerfMode)) {
+            mConfig.setABPerfModeCurrent((boolean) newValue);
             return true;
         }
         return false;
