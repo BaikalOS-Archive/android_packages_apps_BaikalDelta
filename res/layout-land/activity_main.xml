@@ -286,8 +286,6 @@
                         android:layout_weight="1" />
 
                     <Button
-<<<<<<< HEAD
-=======
                         android:id="@+id/button_select_file"
                         android:layout_width="wrap_content"
                         android:layout_height="46dp"
@@ -298,7 +296,6 @@
                         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.Button" />
 
                     <Button
->>>>>>> d01a487... OpenDelta: follow system font
                         android:id="@+id/button_flash_now"
                         android:layout_width="wrap_content"
                         android:layout_height="42dp"
