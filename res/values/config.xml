@@ -55,7 +55,9 @@
 		<item>i777</item>
 	</string-array>
 
-	<string name="official_version_tag">HOMEMADE</string>
+	<string name="official_version_tag">OFFICIAL</string>
+	<string name="unofficial_version_tag">UNOFFICIAL</string>
+	<string name="dev_version_tag">DEV</string>
 	<string name="weekly_version_tag">WEEKLY</string>
 	<string name="gapps_version_tag">GAPPS</string>
 	<string name="microg_version_tag">MICROG</string>

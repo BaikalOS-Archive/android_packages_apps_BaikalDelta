@@ -931,6 +931,12 @@ OnWantUpdateCheckListener, OnSharedPreferenceChangeListener {
 
     private boolean isMatchingImage(String fileName) {
         try {
+
+            Logger.d("isMatchingImage: fileName=" + fileName);
+            Logger.d("isMatchingImage: config.getDevice()=" + config.getDevice());
+            Logger.d("isMatchingImage: config.getBuildTypeTag()=" + config.getBuildTypeTag());
+            Logger.d("isMatchingImage: config.getFileBaseNamePrefix()=" + config.getFileBaseNamePrefix());
+
             if (fileName.endsWith(".zip") && fileName.contains(config.getDevice()) &&
                     (config.getBuildTypeTag() != null ? fileName.contains(config.getBuildTypeTag()) : false) &&
                     fileName.startsWith(config.getFileBaseNamePrefix())) {
@@ -940,6 +946,10 @@ OnWantUpdateCheckListener, OnSharedPreferenceChangeListener {
                     String version = parts[1];
                     Version current = new Version(config.getAndroidVersion());
                     Version fileVersion = new Version(version);
+
+                    Logger.d("isMatchingImage: current=" + current);
+                    Logger.d("isMatchingImage: fileVersion=" + fileVersion);
+
                     if (fileVersion.compareTo(current) >= 0) {
                         Logger.d("isMatchingImage: ok " + fileName);
                         return true;

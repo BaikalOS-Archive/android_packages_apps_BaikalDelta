@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">OpenDelta</string>
+    <string name="app_name">BaikalDelta</string>
     <string name="title">Aktualizace systému</string>
     <string name="action_networks">Sítě</string>
     <string name="title_networks">Sítě pro autom. stažení</string>

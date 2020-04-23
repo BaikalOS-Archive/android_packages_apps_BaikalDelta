@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="eu.chainfire.opendelta"
     android:versionCode="10"
-    android:versionName="1.0" >
+    android:versionName="1.0" 
+    android:sharedUserId="android.uid.system">
+
     <uses-sdk
         android:minSdkVersion="23"
         android:targetSdkVersion="25" />
@@ -47,10 +49,10 @@
                 -->
                 <action android:name="android.settings.SYSTEM_UPDATE_SETTINGS" />
                 <!-- Show in launcher for debugging purposed -->
-                <!--
+
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                -->
+                
             </intent-filter>
         </activity>
         <activity

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">OpenDelta</string>
+    <string name="app_name">BaikalDelta</string>
     <string name="title">시스템 업데이트</string>
     <string name="action_networks">네트워크</string>
     <string name="title_networks">자동 다운로드 네트워크</string>

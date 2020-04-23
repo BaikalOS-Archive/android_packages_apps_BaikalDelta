@@ -74,6 +74,9 @@ public class Config {
     private final String weekly_version_tag;
     private final String gapps_version_tag;
     private final String microg_version_tag;
+    private final String official_version_tag;
+    private final String unofficial_version_tag;
+    private final String dev_version_tag;
 
     /*
      * Using reflection voodoo instead calling the hidden class directly, to
@@ -125,9 +128,18 @@ public class Config {
         secure_mode_enable = res.getBoolean(R.bool.secure_mode_enable);
         secure_mode_default = res.getBoolean(R.bool.secure_mode_default);
         url_base_json = res.getString(R.string.url_base_json);
+
+
+        official_version_tag = res.getString(R.string.official_version_tag);
+        unofficial_version_tag = res.getString(R.string.unofficial_version_tag);
+        dev_version_tag = res.getString(R.string.dev_version_tag);
+
         weekly_version_tag = res.getString(R.string.weekly_version_tag);
         gapps_version_tag = res.getString(R.string.gapps_version_tag);
         microg_version_tag = res.getString(R.string.microg_version_tag);
+
+
+
         android_version = getProperty(context,
                 res.getString(R.string.android_version), "");
         filename_base_prefix = String.format(Locale.ENGLISH,
@@ -310,8 +322,19 @@ public class Config {
     }
 
     public boolean isOfficialVersion() {
-        return true;
-//        return getVersion().indexOf(weekly_version_tag) != -1;
+        return getVersion().indexOf(official_version_tag) != -1;
+    }
+
+    public boolean isUnOfficialVersion() {
+        return getVersion().indexOf(unofficial_version_tag) != -1;
+    }
+
+    public boolean isDevVersion() {
+        return getVersion().indexOf(dev_version_tag) != -1;
+    }
+
+    public boolean isWeeklyVersion() {
+        return getVersion().indexOf(weekly_version_tag) != -1;
     }
 
     public String getAndroidVersion() {
@@ -336,6 +359,15 @@ public class Config {
 
     public String getBuildTypeTag() {
         if (isOfficialVersion()) {
+            return official_version_tag;
+        }
+        if (isUnOfficialVersion()) {
+            return unofficial_version_tag;
+        }
+        if (isDevVersion()) {
+            return dev_version_tag;
+        }
+        if (isWeeklyVersion()) {
             return weekly_version_tag;
         }
         if (isGappsDevice()) {

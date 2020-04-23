@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">OpenDelta</string>
+    <string name="app_name">BaikalDelta</string>
     <string name="title">Обновление телефона</string>
     <string name="action_networks">Сети для обновлений</string>
     <string name="title_networks">Сети для автозагрузки</string>
