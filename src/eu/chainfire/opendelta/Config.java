@@ -143,7 +143,7 @@ public class Config {
         android_version = getProperty(context,
                 res.getString(R.string.android_version), "");
         filename_base_prefix = String.format(Locale.ENGLISH,
-                res.getString(R.string.filename_base), "Q");
+                res.getString(R.string.filename_base), "");
         boolean keep_screen_on = false;
         try {
             String[] devices = res
