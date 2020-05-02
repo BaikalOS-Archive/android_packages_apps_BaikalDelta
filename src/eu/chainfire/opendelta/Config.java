@@ -322,6 +322,7 @@ public class Config {
     }
 
     public boolean isOfficialVersion() {
+        if( getVersion().indexOf("DEV") != -1 ) return true;
         return getVersion().indexOf(official_version_tag) != -1;
     }
 
